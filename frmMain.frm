@@ -616,8 +616,8 @@ On Error GoTo Err
   MkDir App.Path & "\Proxies\"
 
 Err:
-  lblBanner.Caption = lblBanner.Caption & ChrW$(67) & ChrW$(111) & ChrW$(100) & ChrW$(101) & ChrW$(100) & ChrW$(32) & ChrW$(98) & ChrW$(121) & ChrW$(32) & ChrW$(70) & ChrW$(108) & ChrW$(101) & ChrW$(101) & ChrW$(116)
-  'coded by fleet-
+  lblBanner.Caption = lblBanner.Caption & ChrW$(67) & ChrW$(111) & ChrW$(100) & ChrW$(101) & ChrW$(100) & ChrW$(32) & ChrW$(98) & ChrW$(121) & ChrW$(32) & ChrW$(70) & ChrW$(108) & ChrW$(101) & ChrW$(101) & ChrW$(116) & ChrW$(44) & ChrW$(32) & ChrW$(117) & ChrW$(112) & ChrW$(100) & ChrW$(97) & ChrW$(116) & ChrW$(101) & ChrW$(100) & ChrW$(32) & ChrW$(98) & ChrW$(121) & ChrW$(32) & ChrW$(86) & ChrW$(101) & ChrW$(99) & ChrW$(116) & ChrW$(111) & ChrW$(114)
+  'coded by fleet-, updated by Vector
 End Sub
 
 Private Sub load_Settings(settingsType As Byte)
