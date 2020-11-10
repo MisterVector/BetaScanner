@@ -8,7 +8,7 @@
 
     --> Updated the verification IPs in VerificationIPs.txt
 
-    --> The amount of proxies able to be loaded is now 2,147,483,647
+    --> The amount of proxies able to be tested is now 2,147,483,647
 
     --> Verification method for proxies has changed, as the old method no longer worked
 
