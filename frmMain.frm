@@ -892,7 +892,7 @@ On Error GoTo Err
   winSock(Index).GetData socketData
   'buffer data
   
-  If InStrB(socketData, "Battle.net") Then
+  If Asc(Left$(socketData, 1)) = &HFF Then
     Addproxy_Bnet winSock(Index).RemoteHostIP & ":" & winSock(Index).RemotePort
     DoEvents
     winSock(Index).Close
@@ -905,11 +905,13 @@ On Error GoTo Err
     'is http
         If InStrB(socketData, "200 OK") Then
             proxyTicks(Index) = GTC + 6000
-            '
+            
             Addproxy_Granted winSock(Index).RemoteHostIP & ":" & winSock(Index).RemotePort
             DoEvents
-            winSock(Index).SendData "c"
-        'granted, so verify bnet
+            
+            winSock(Index).SendData Chr$(1)
+            winSock(Index).SendData Chr$(&HFF) & Chr$(50) & Chr$(0) & Chr$(58) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & "68XINB2W" & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(&H4F) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & "USA" & Chr$(0) & "United States" & Chr$(0)
+            'granted, so verify bnet            '
         Else
             Addproxy_Denied winSock(Index).RemoteHostIP & ":" & winSock(Index).RemotePort
             '
@@ -928,10 +930,11 @@ On Error GoTo Err
             proxyTicks(Index) = GTC + 6000
             '
             Addproxy_Granted winSock(Index).RemoteHostIP & ":" & winSock(Index).RemotePort
-            '
             DoEvents
-            winSock(Index).SendData "c" 'verify bnet
-            'granted
+            
+            winSock(Index).SendData Chr$(1)
+            winSock(Index).SendData Chr$(&HFF) & Chr$(50) & Chr$(0) & Chr$(58) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & "68XINB2W" & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(&H4F) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & Chr$(0) & "USA" & Chr$(0) & "United States" & Chr$(0)
+            'granted, so verify bnet
           Else
             Addproxy_Denied winSock(Index).RemoteHostIP & ":" & winSock(Index).RemotePort
             '
