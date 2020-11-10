@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "MSWINSCK.OCX"
 Begin VB.Form FrmMain 
    BorderStyle     =   3  'Fixed Dialog
-   Caption         =   "BetaScanner 1.0.2"
+   Caption         =   "BetaScanner 1.0.3"
    ClientHeight    =   7920
    ClientLeft      =   45
    ClientTop       =   420

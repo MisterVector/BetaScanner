@@ -2,6 +2,17 @@
     ==============================
 
 
+	VERSION 1.0.3 (unofficial update by Vector)
+
+    --> Updated the verification IP in BETAScannerINI.INI to the latest useast one
+
+    --> Updated the verification IPs in VerificationIPs.txt
+
+    --> The amount of proxies able to be loaded is now 2,147,483,647
+
+    --> Verification method for proxies has changed, as the old method no longer worked
+
+
 	VERSION 1.0.2
 
     --> BetaScanner now supports HTTP scanning. While scanning on ports
