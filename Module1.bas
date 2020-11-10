@@ -45,8 +45,8 @@ Public proxyTicks() As Long
 Public cancelNext As Boolean
 Public proxyPort As Long
 Public original_TimeoutTick As Long
-Public proxyScanlist() As String, proxyScanlistIndex As Integer
-Public proxyRangesIndex As Integer
+Public proxyScanlist() As String, proxyScanlistIndex As Long
+Public proxyRangesIndex As Long
 Public methodType As Byte
 '
 Dim currentIP() As String
